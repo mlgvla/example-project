@@ -12,7 +12,7 @@ function PageCount() {
   
   return (
     <div>
-      <h1>Page Count: {count}</h1>
+      <h1>The Current Page Count: {count}</h1>
     </div>
   )
 }
