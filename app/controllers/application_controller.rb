@@ -18,6 +18,6 @@ class ApplicationController < ActionController::API
     def render_not_found_response(not_found)
         #check to see what's passed in to process error correctly - I think it uses the object
         #binding.pry
-        render json: { errors: "Record not found" }, status: :
+        render json: { errors: "Record not found" }, status: :not_found
     end
 end
