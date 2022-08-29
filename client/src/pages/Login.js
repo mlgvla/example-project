@@ -1,10 +1,13 @@
-import React from 'react'
-import LoginForm from '../components/LoginForm'
-import SignUpForm from '../components/SignUpForm'
+import React, { useState } from "react"
+import LoginForm from "../components/LoginForm"
+import SignUpForm from "../components/SignUpForm"
 
-function Login() {
+function Login({ onLogin }) {
+  // const [showLogin, setShowLogin] = useState(true)
   return (
-    <div>Login</div>
+    <div>
+      <SignUpForm onLogin={onLogin} />
+    </div>
   )
 }
 
