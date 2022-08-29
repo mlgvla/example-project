@@ -11,3 +11,5 @@ u2 = User.create(username: "tom", email: "tom@me.com", password: "456")
 u3 = User.create(username: "nate", email: "nate@me.com", password: "789")
 u4 = User.create(username: "seyr", email: "seyr@me.com", password: "061")
 u5 = User.create(username: "amanda", email: "amanda@me.com", password: "987")
+
+puts "Done seeding"
