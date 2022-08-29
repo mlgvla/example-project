@@ -7,14 +7,14 @@ import Login from "./pages/Login"
 function App() {
   const [user, setUser] = useState(null)
 
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((res) => {
-  //     if (res.ok) {
-  //       res.json().then((user) => setUser(user))
-  //     }
-  //   })
-  // }, [])
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((res) => {
+      if (res.ok) {
+        res.json().then((user) => setUser(user))
+      }
+    })
+  }, [])
 
   if (!user) {
     return <Login onLogin={setUser} />

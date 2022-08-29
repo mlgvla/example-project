@@ -3,11 +3,15 @@ import LoginForm from "../components/LoginForm"
 import SignUpForm from "../components/SignUpForm"
 
 function Login({ onLogin }) {
-  // const [showLogin, setShowLogin] = useState(true)
+  const [showLogin, setShowLogin] = useState(true)
   return (
-    <div>
-      <SignUpForm onLogin={onLogin} />
-    </div>
+    <>
+      {showLogin ? (
+        <LoginForm onLogin={onLogin} />
+      ) : (
+        <SignUpForm onLogin={onLogin} />
+      )}
+    </>
   )
 }
 
