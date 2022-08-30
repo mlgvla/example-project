@@ -31,31 +31,26 @@ function SignUpForm({ onLogin }) {
     })
   }
 
-
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name=""
-          id=""
+          name="username"
           value={username}
           placeholder="Enter username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="email"
-          name=""
-          id=""
+          name="email"
           value={email}
           placeholder="Enter email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
-          name=""
-          id=""
+          name="password"
           value={password}
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}

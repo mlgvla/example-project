@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import Test from "./Test"
 import PageCount from "./PageCount"
+import NavBar from "./components/NavBar"
+import Home from "./pages/Home"
 import Login from "./pages/Login"
 
 function App() {
@@ -16,20 +18,41 @@ function App() {
     })
   }, [])
 
-  if (!user) {
-    return <Login onLogin={setUser} />
-  }
-
+  // if (!user) {
+  //   return (
+  //     <>
+  //       <NavBar user={user} setUser={setUser} />
+  //       <Login user={user} onLogin={setUser} />
+  //     </>
+  //   )
+  // }
+  // is there some way to use this without creating an infinite loop because of the auto login
+  // if (!user) {
+  //   navigate("/login", {replace: true} )
+  // }
 
   return (
-    <BrowserRouter>
+    <>
+      <NavBar user={user} setUser={setUser} />
       <div className="App">
         <Routes>
-          <Route path="/testing" element={<Test />} />
-          <Route path="/" element={<PageCount />} />
+          {/* <Route path="/testing" element={<Test />} />
+          <Route path="/" element={<PageCount />} /> */}
+
+          <Route
+            path="/"
+            element={
+              !user ? (
+                <Login user={user} onLogin={setUser} />
+              ) : (
+                <Navigate replace to={"/home"} />
+              )
+            }
+          />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </>
   )
 }
 

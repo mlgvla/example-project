@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import LoginForm from "../components/LoginForm"
 import SignUpForm from "../components/SignUpForm"
 
-function Login({ onLogin }) {
+function Login({ user, onLogin }) {
   const [showLogin, setShowLogin] = useState(true)
   return (
     <>

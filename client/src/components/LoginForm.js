@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function LoginForm() {
+function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState([])
@@ -34,16 +34,14 @@ function LoginForm() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name=""
-          id=""
+          name="username"
           value={username}
           placeholder="Enter username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
-          name=""
-          id=""
+          name="password"
           value={password}
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
